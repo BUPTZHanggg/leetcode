@@ -4,6 +4,7 @@ public class ReverseInteger {
 
     public static int reverse(int x) {
         int result = 0;
+        int abs = x > 0 ? x : x * -1;
         while (x != 0){
             int tmp = x % 10;
             x /= 10;
@@ -21,7 +22,6 @@ public class ReverseInteger {
     }
 
     public static void main(String[] args) {
-        System.out.println(reverse(1563847412));
-        System.out.println(Integer.MAX_VALUE);
+
     }
 }

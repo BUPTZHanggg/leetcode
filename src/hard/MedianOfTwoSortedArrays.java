@@ -1,12 +1,7 @@
 package hard;
 
 public class MedianOfTwoSortedArrays {
-<<<<<<< HEAD
 
-    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
-        return 0;
-    }
-=======
     public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int longLen = nums1.length;
         int shortLen = nums2.length;
@@ -70,5 +65,4 @@ public class MedianOfTwoSortedArrays {
         int[] b = {1};
         System.out.println(findMedianSortedArrays(a, b));
     }
->>>>>>> 146df7bfb032d1030194e0125ce8ddacdf615409
 }

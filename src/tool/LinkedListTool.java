@@ -32,4 +32,17 @@ public class LinkedListTool {
         result.setNext(offer(length - 1));
         return result;
     }
+
+    /**
+     * 生成长度为length的有序链表
+     * @param length
+     * @return
+     */
+    public static ListNode offerSorted(int length){
+        if (length == 1)
+            return new ListNode(10-length);
+        ListNode result = new ListNode(10-length);
+        result.setNext(offerSorted(length - 1));
+        return result;
+    }
 }

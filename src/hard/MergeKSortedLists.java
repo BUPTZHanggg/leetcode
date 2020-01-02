@@ -25,6 +25,12 @@ public class MergeKSortedLists {
     }
 
     public static void main(String[] args) {
-        LinkedListTool.offer(2);
+        ListNode n1 = LinkedListTool.offerSorted(3);
+        LinkedListTool.print(n1);
+        ListNode n2 = LinkedListTool.offerSorted(2);
+        LinkedListTool.print(n2);
+        ListNode n3 = LinkedListTool.offerSorted(2);
+        LinkedListTool.print(n3);
+        LinkedListTool.print(mergeKLists(new ListNode[]{n1,n2,n3}));
     }
 }

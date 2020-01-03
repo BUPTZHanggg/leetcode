@@ -1,2 +1,7 @@
+#Intellij idea
 .idea/
+/idea/
+*.ipr
+*.iml
+*.iws
 out/

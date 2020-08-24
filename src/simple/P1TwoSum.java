@@ -4,7 +4,11 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TwoSum {
+/**
+ * 用一个map  k存数组中的值 v存下标
+ * 遍历数组即可
+ */
+public class P1TwoSum {
 
     public static int[] twoSum(int[] nums, int target) {
         Map<Integer ,Integer> map = new HashMap<>();

@@ -1,9 +1,15 @@
 package medium;
 
+import common.ListNode;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class ZigZagConversion {
+/**
+ * 记录当前行  是否向下
+ * 每一行用一个stringbuiler存起来
+ */
+public class P6ZigZagConversion {
 
     public static String convert(String s, int numRows) {
         if (s == null || s.length() < 1 || numRows <= 1)

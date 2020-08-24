@@ -1,6 +1,10 @@
 package medium;
 
-public class LongestSubstringWithoutRepeatingCharacters {
+/**
+ * 记录当前长度和最长长度
+ * 遍历字符串 beginIndex记录开始位置  每次遇到重复字符重新定义beginIndex
+ */
+public class P3LongestSubstringWithoutRepeatingCharacters {
 
     public static int lengthOfLongestSubstring(String s) {
         int tmpLen = 0;//每次循环的长度
@@ -16,9 +20,6 @@ public class LongestSubstringWithoutRepeatingCharacters {
                 }
             }else {
                 beginIndex = indexTmp + 1 + beginIndex;
-                if (tmpLen > result){
-                    result = tmpLen;
-                }
                 tmpLen = i - beginIndex + 1;
             }
         }

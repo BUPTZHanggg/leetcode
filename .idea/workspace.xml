@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="336c4d89-1731-46b9-a8b5-cc869a2dce9c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/medium/P2AddTwoNumbers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/medium/P5LongestPalindromicSubstring.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Dp/MaxSumPath.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/medium/AddTwoNumbers.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/medium/LongestPalindromicSubstring.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/medium/LongestSubstringWithoutRepeatingCharacters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/medium/P3LongestSubstringWithoutRepeatingCharacters.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/medium/ZigZagConversion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/medium/P6ZigZagConversion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simple/TwoSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/simple/P1TwoSum.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,12 +66,12 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.195" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
-  <component name="RunManager" selected="Application.LongestPalindromicSubstring">
+  <component name="RunManager" selected="Application.MaxSumPath">
     <configuration name="LongestCommonPrefix" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="simple.LongestCommonPrefix" />
       <module name="leetcode" />
@@ -86,12 +98,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MergeKSortedLists" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="hard.MergeKSortedLists" />
+    <configuration name="MaxSumPath" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Dp.MaxSumPath" />
       <module name="leetcode" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="hard.*" />
+          <option name="PATTERN" value="Dp.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -99,12 +111,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RemoveElement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="simple.RemoveElement" />
+    <configuration name="MergeKSortedLists" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="hard.MergeKSortedLists" />
       <module name="leetcode" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="simple.*" />
+          <option name="PATTERN" value="hard.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -127,11 +139,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.LongestPalindromicSubstring" />
+        <item itemvalue="Application.MaxSumPath" />
         <item itemvalue="Application.MergeKSortedLists" />
+        <item itemvalue="Application.LongestPalindromicSubstring" />
         <item itemvalue="Application.LongestCommonPrefix" />
         <item itemvalue="Application.SwapPairs" />
-        <item itemvalue="Application.RemoveElement" />
       </list>
     </recent_temporary>
   </component>
@@ -181,6 +193,7 @@
       <workItem from="1585224188997" duration="568000" />
       <workItem from="1595483912101" duration="2078000" />
       <workItem from="1598228470051" duration="6483000" />
+      <workItem from="1631774618763" duration="7776000" />
     </task>
     <task id="LOCAL-00001" summary="20191110">
       <created>1573347161648</created>
@@ -195,15 +208,69 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="20191110" />
     <option name="LAST_COMMIT_MESSAGE" value="20191110" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1595484332993">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1740" height="377" key="GridCell.Tab.0.bottom" timestamp="1631783239051">
+      <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1595484332993" />
+    <state width="1740" height="377" key="GridCell.Tab.0.bottom/0.0.1792.1120/1792.0.1440.2560@0.0.1792.1120" timestamp="1631783239051" />
+    <state width="1740" height="377" key="GridCell.Tab.0.center" timestamp="1631783239049">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1740" height="377" key="GridCell.Tab.0.center/0.0.1792.1120/1792.0.1440.2560@0.0.1792.1120" timestamp="1631783239049" />
+    <state width="1740" height="377" key="GridCell.Tab.0.left" timestamp="1631783239048">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1740" height="377" key="GridCell.Tab.0.left/0.0.1792.1120/1792.0.1440.2560@0.0.1792.1120" timestamp="1631783239048" />
+    <state width="1740" height="377" key="GridCell.Tab.0.right" timestamp="1631783239050">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1740" height="377" key="GridCell.Tab.0.right/0.0.1792.1120/1792.0.1440.2560@0.0.1792.1120" timestamp="1631783239050" />
+    <state width="1740" height="377" key="GridCell.Tab.1.bottom" timestamp="1631783239054">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1740" height="377" key="GridCell.Tab.1.bottom/0.0.1792.1120/1792.0.1440.2560@0.0.1792.1120" timestamp="1631783239054" />
+    <state width="1740" height="377" key="GridCell.Tab.1.center" timestamp="1631783239052">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1740" height="377" key="GridCell.Tab.1.center/0.0.1792.1120/1792.0.1440.2560@0.0.1792.1120" timestamp="1631783239052" />
+    <state width="1740" height="377" key="GridCell.Tab.1.left" timestamp="1631783239052">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1740" height="377" key="GridCell.Tab.1.left/0.0.1792.1120/1792.0.1440.2560@0.0.1792.1120" timestamp="1631783239052" />
+    <state width="1740" height="377" key="GridCell.Tab.1.right" timestamp="1631783239053">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1740" height="377" key="GridCell.Tab.1.right/0.0.1792.1120/1792.0.1440.2560@0.0.1792.1120" timestamp="1631783239053" />
+    <state x="280" y="25" width="1280" height="1030" key="SettingsEditor" timestamp="1631775129858">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="280" y="25" width="1280" height="1030" key="SettingsEditor/0.0.1792.1120/1792.0.1440.2560@0.0.1792.1120" timestamp="1631775129858" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Dp/MaxSumPath.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/leetcode$LongestCommonPrefix.ic" NAME="LongestCommonPrefix Coverage Results" MODIFIED="1585224439559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

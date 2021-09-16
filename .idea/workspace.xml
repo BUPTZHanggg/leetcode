@@ -20,7 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="336c4d89-1731-46b9-a8b5-cc869a2dce9c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Dp/MaxSumPath.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -193,7 +192,7 @@
       <workItem from="1585224188997" duration="568000" />
       <workItem from="1595483912101" duration="2078000" />
       <workItem from="1598228470051" duration="6483000" />
-      <workItem from="1631774618763" duration="7776000" />
+      <workItem from="1631774618763" duration="8369000" />
     </task>
     <task id="LOCAL-00001" summary="20191110">
       <created>1573347161648</created>

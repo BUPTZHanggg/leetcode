@@ -26,32 +26,35 @@ public class MaxSumPath {
         tree[2] = new int[]{8,1,10,0,0};
         tree[3] = new int[]{2,7,4,4,0};
         tree[4] = new int[]{4,5,2,6,5};
-        int max = recMaxSum(tree, N, 0, 0);
-        int max2 = dpMaxSum(tree, N);
+        int max = recMaxSum(tree, 0, 0);
+        int max2 = dpMaxSum1(tree, N);
     }
 
-    private static int dpMaxSum(int[][] tree, int N) {
-        int[][] maxSum = new int[N][N];
-        for (int m = 0; m < N; m++) {
-            maxSum[N - 1][m] = tree[N - 1][m];
-        }
-        for (int p = N - 2; p >= 0; p--) {
-            for (int q = 0; q <= p; q++) {
-                maxSum[p][q] = Math.max(maxSum[p + 1][q], maxSum[p + 1][q + 1]) + tree[p][q];
-            }
-        }
-        return maxSum[0][0];
-    }
 
     /**
-     * N:表示树一共有多少行
      * i,j表示从tree[i][j]到底部的最大路径和
      */
-    private static int recMaxSum(int[][] tree, int N, int i, int j) {
-        if (i == N - 1) {
+    private static int recMaxSum(int[][] tree, int i, int j) {
+        if (i == tree.length - 1) {
             return tree[i][j];
         }
-        return Math.max(recMaxSum(tree, N, i + 1, j), recMaxSum(tree, N, i + 1, j + 1)) + tree[i][j];
+        int A = recMaxSum(tree, i + 1, j);
+        int B = recMaxSum(tree, i + 1, j + 1);
+        return tree[i][j] + Math.max(A, B);
+    }
+    private static int dpMaxSum1(int[][] tree, int N) {
+        int[][] res = new int[N][N];
+        for (int i = N - 1; i >= 0; i--) {
+            res[N - 1][i] = tree[N - 1][i];
+        }
+        for (int i = N - 2; i >= 0; i--) {
+            for (int j = i; j >= 0; j--) {
+                int A = res[i + 1][j];
+                int B = res[i + 1][j + 1];
+                res[i][j] = Math.max(A, B) + tree[i][j];
+            }
+        }
+        return res[0][0];
     }
 
 }

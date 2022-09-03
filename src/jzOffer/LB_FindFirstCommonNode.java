@@ -1,5 +1,7 @@
 package jzOffer;
 
+import java.util.List;
+
 import common.ListNode;
 
 /**
@@ -18,4 +20,5 @@ public class LB_FindFirstCommonNode {
         }
         return pHead1;
     }
+    
 }

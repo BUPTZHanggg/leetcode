@@ -1,4 +1,4 @@
-package leblanc;
+package leblanc.l3_hashtable;
 
 import java.util.HashSet;
 import java.util.Set;

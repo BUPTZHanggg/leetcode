@@ -1,4 +1,4 @@
-package leblanc;
+package leblanc.l4_str;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package leblanc;
+package leblanc.l5_stackAndQueue;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;
@@ -17,6 +17,25 @@ import java.util.Deque;
  * Created on 2022-08-18
  */
 public class L5_StackAndQueue_E6_MaxSlidingWindow {
+
+    public int[] maxSlidingWindow1(int[] nums, int k) {
+        int[] res = new int[nums.length - k + 1];
+        Deque<Integer> deque = new ArrayDeque<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (!deque.isEmpty() && i >= k && deque.peek() == nums[i - k]) {
+                deque.poll();
+            }
+            int currNum = nums[i];
+            while (!deque.isEmpty() && currNum > deque.peekLast()) {
+                deque.pollLast();
+            }
+            deque.offer(currNum);
+            if (i >= k - 1) {
+                res[i - k + 1] = deque.peek();
+            }
+        }
+        return res;
+    }
 
     public static void main(String[] args) {
         L5_StackAndQueue_E6_MaxSlidingWindow cl = new L5_StackAndQueue_E6_MaxSlidingWindow();

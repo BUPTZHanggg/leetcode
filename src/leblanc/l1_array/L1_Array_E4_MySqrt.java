@@ -1,4 +1,4 @@
-package leblanc;
+package leblanc.l1_array;
 
 /**
  * LC69

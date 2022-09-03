@@ -1,4 +1,4 @@
-package leblanc;
+package leblanc.l2_linkedlist;
 
 import common.ListNode;
 import tool.LinkedListTool;

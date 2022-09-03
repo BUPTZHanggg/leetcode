@@ -1,4 +1,4 @@
-package leblanc;
+package leblanc.l7_bt;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -42,7 +42,7 @@ public class L7_BT_E1_Traversal {
     //============================================================
 
     //1.1 递归前序
-    private void rec_preorder(TreeNode root, List<Integer> res) {
+    public void rec_preorder(TreeNode root, List<Integer> res) {
         if (root == null) {
             return;
         }

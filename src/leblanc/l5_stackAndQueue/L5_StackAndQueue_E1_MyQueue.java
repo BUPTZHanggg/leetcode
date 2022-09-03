@@ -1,4 +1,4 @@
-package leblanc;
+package leblanc.l5_stackAndQueue;
 
 import java.util.Stack;
 

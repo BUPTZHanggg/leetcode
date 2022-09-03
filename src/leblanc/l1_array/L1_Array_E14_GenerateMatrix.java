@@ -1,6 +1,4 @@
-package leblanc;
-
-import java.util.Arrays;
+package leblanc.l1_array;
 
 /**
  * LC59

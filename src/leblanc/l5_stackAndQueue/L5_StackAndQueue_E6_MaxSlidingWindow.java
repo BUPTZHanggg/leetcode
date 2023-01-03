@@ -6,7 +6,8 @@ import java.util.Deque;
 
 /**
  * LC239 hard
- * 给定一个数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。你只可以看到在滑动窗口内的 k 个数字。滑动窗口每次只向右移动一位。
+ * 给定一个数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。
+ * 你只可以看到在滑动窗口内的 k 个数字。滑动窗口每次只向右移动一位。
  *
  * 返回滑动窗口中的最大值。
  * 1 <= nums.length <= 10^5
@@ -18,41 +19,42 @@ import java.util.Deque;
  */
 public class L5_StackAndQueue_E6_MaxSlidingWindow {
 
-    public int[] maxSlidingWindow1(int[] nums, int k) {
-        int[] res = new int[nums.length - k + 1];
+    public static void main(String[] args) {
+        L5_StackAndQueue_E6_MaxSlidingWindow cl = new L5_StackAndQueue_E6_MaxSlidingWindow();
+        int[] nums = new int[]{1,3,3,-3,5,3,6,7};
+        System.out.println(Arrays.toString(cl.maxSlidingWindow0(nums, 3)));
+    }
+
+    public int[] maxSlidingWindow0(int[] nums, int k) {
         Deque<Integer> deque = new ArrayDeque<>();
-        for (int i = 0; i < nums.length; i++) {
-            if (!deque.isEmpty() && i >= k && deque.peek() == nums[i - k]) {
+        int[] res = new int[nums.length - k + 1];
+        int index = 0;
+        for (int j = 0; j < nums.length; j++) {
+            if (j >= k && deque.peek() == nums[j - k]) {
                 deque.poll();
             }
-            int currNum = nums[i];
-            while (!deque.isEmpty() && currNum > deque.peekLast()) {
+            while (!deque.isEmpty() && deque.peekLast() < nums[j]) {
                 deque.pollLast();
             }
-            deque.offer(currNum);
-            if (i >= k - 1) {
-                res[i - k + 1] = deque.peek();
+            deque.offer(nums[j]);
+            if (j >= k - 1) {
+                res[index++] = deque.peek();
             }
         }
         return res;
     }
 
-    public static void main(String[] args) {
-        L5_StackAndQueue_E6_MaxSlidingWindow cl = new L5_StackAndQueue_E6_MaxSlidingWindow();
-        int[] nums = new int[]{1,3,3,-3,5,3,6,7};
-        System.out.println(Arrays.toString(cl.maxSlidingWindow(nums, 2)));
-    }
     public int[] maxSlidingWindow(int[] nums, int k) {
         Deque<Integer> deque = new ArrayDeque<>();
 
         int[] res = new int[nums.length - k + 1];
         int resIndex = 0;
         for (int i = 0; i < nums.length; i++) {
-            if (!deque.isEmpty() && i >= k && deque.peek() == nums[i - k]) {
-                deque.poll();
-            }
             while (!deque.isEmpty() && deque.peekLast() < nums[i]) {
                 deque.pollLast();
+            }
+            if (!deque.isEmpty() && i >= k && deque.peek() == nums[i - k]) {
+                deque.poll();
             }
             deque.offer(nums[i]);
             if (i >= k - 1) {

@@ -45,9 +45,9 @@ public class L1_Array_E15_SpiralOrder {
             startY++;
             offset++;
         }
-        for (int i = startX; i <= m - offset; i++) {
+        for (; startX <= m - offset; startX++) {
             for (int j = startY; j <= n - offset; j++) {
-                res.add(matrix[i][j]);
+                res.add(matrix[startX][j]);
             }
         }
         return res;

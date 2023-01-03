@@ -26,13 +26,4 @@ public class L4_Str_E1_ReverseString {
             right--;
         }
     }
-
-    public static void main(String[] args) {
-        List<String> allAvailableIdcs = new ArrayList<>();
-        allAvailableIdcs.add("aliyun");
-        allAvailableIdcs.add("tencent");
-        System.out.println(allAvailableIdcs);
-        Collections.shuffle(allAvailableIdcs, new Random(System.currentTimeMillis()));
-        System.out.println(allAvailableIdcs);
-    }
 }

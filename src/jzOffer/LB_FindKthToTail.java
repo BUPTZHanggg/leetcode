@@ -1,5 +1,7 @@
 package jzOffer;
 
+import java.util.concurrent.locks.ReentrantLock;
+
 import common.ListNode;
 
 /**
@@ -9,6 +11,22 @@ import common.ListNode;
  * Created on 2021-12-06
  */
 public class LB_FindKthToTail {
+    ReentrantLock reentrantLock = new ReentrantLock(true);
+    int a = 5;
+
+    public static void main(String[] args) {
+
+    }
+
+    private void m() {
+        try {
+            reentrantLock.lock();
+            //业务
+            a++;
+        } finally {
+            reentrantLock.unlock();
+        }
+    }
 
     public ListNode FindKthToTail (ListNode pHead, int k) {
         if (pHead == null) {

@@ -1,28 +1,63 @@
 package test;
 
-/**
- * 测试MinorGC、MajorGC、FullGC
- * -Xms9m -Xmx9m -XX:+PrintGCDetails
- */
+import java.io.BufferedWriter;
+import java.nio.ByteBuffer;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.Callable;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.FutureTask;
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.TimeUnit;
+
 public class GcTest {
 
-    public static void main(String[] args) {
-        GcTest test = new GcTest();
-        long userId = 100011;
-        int num = 10;
-        test.setStr("aaa");
-    }
+    private int a;
+    private static int b;
+    private static final int c = 10;
 
-    private void setStr(String str) {
-        str += "aaa";
-        System.out.println("方法里的" + str);
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
+        Thread thread = new Thread(() -> {
+            try {
+                System.out.println(Thread.currentThread().isInterrupted());
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                System.out.println(Thread.currentThread().isInterrupted());
+                e.printStackTrace();
+            }
+            System.out.println("被打断之后");
+        });
+        thread.start();
+        Thread.sleep(2000);
+        thread.interrupt();
+//        Thread.currentThread().interrupt();
+//        ExecutorService threadPool = Executors.newFixedThreadPool(3);
+//        CompletableFuture.supplyAsync(() -> {
+//            System.out.println(Thread.currentThread().getName() + "--------副线程come in");
+//            int result = ThreadLocalRandom.current().nextInt(10);//产生随机数
+//            try {
+//                TimeUnit.SECONDS.sleep(1);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//            return result;
+//        }, threadPool).thenApply(res -> {
+//            System.out.println(Thread.currentThread().getName() + "--------then");
+//            return  res + 1;
+//        }).whenComplete((v, e) -> {//没有异常,v是值，e是异常
+//            if (e == null) {
+//                System.out.println("------------------计算完成，更新系统updataValue" + v + Thread.currentThread().getName());
+//            }
+//        }).exceptionally(e -> {//有异常的情况
+//            e.printStackTrace();
+//            System.out.println("异常情况" + e.getCause() + "\t" + e.getMessage());
+//            return null;
+//        });
+//        threadPool.shutdown();
     }
-
-    private void setUserAge(User user) {
-        user.setAge(28);
-        System.out.println("方法里的" + user.getAge());
-    }
-
     public static long ipToLong(String strIp) {
 
         String[]ip = strIp.split("\\.");
@@ -47,3 +82,13 @@ public class GcTest {
         return sb.toString();
     }
 }
+
+class MyThread implements Callable<String> {
+
+    @Override
+    public String call() throws Exception {
+        System.out.println(Thread.currentThread().getName() + "-----come in call() ----异步执行");
+        return "hello Callable 返回值";
+    }
+}
+

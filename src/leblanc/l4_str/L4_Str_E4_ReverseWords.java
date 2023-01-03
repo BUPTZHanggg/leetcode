@@ -18,49 +18,58 @@ public class L4_Str_E4_ReverseWords {
 
     public static void main(String[] args) {
         L4_Str_E4_ReverseWords cl = new L4_Str_E4_ReverseWords();
-        StringBuilder builder = cl.eraseExtraSpaces(" a  rule b ");
-        System.out.println(builder);
-        cl.reverseStr(builder, 0, builder.length() - 1);
-        System.out.println(builder);
-        System.out.println(cl.reverseWords(" a  rule b "));
+        System.out.println(cl.reverseWords("the  aa bba  "));
     }
 
     public String reverseWords(String s) {
-        StringBuilder sb = eraseExtraSpaces(s);
-        reverseStr(sb, 0, sb.length() - 1);
+        char[] chars = eraseExtraSpaces(s.toCharArray());
         int left = 0;
-        while (left < sb.length()) {
-            int right = left;
-            while (right < sb.length() && sb.charAt(right) != ' ') right++;
-            reverseStr(sb, left, right - 1);
-            left = right + 1;
-        }
-        return sb.toString();
-    }
-
-    //翻转给定字符串的给定区间内的字符
-    private void reverseStr(StringBuilder sb, int start, int end) {
-        while (start < end) {
-            char temp = sb.charAt(start);
-            sb.setCharAt(start, sb.charAt(end));
-            sb.setCharAt(end, temp);
-            start++;
-            end--;
-        }
-    }
-
-    public StringBuilder eraseExtraSpaces(String s) {
-        int start = 0, end = s.length() - 1;
-        while (s.charAt(start) == ' ') start++;
-        while (s.charAt(end) == ' ') end--;
-        StringBuilder sb = new StringBuilder();
-        while (start <= end) {
-            char c = s.charAt(start);
-            if (c != ' ' || sb.charAt(sb.length() - 1) != ' ') {
-                sb.append(c);
+        reverseStr(chars, left, chars.length - 1);
+        for (int i = 0; i <= chars.length; i++) {
+            if (i == chars.length || chars[i] == ' ' ) {
+                reverseStr(chars, left, i - 1);
+                left = i + 1;
             }
-            start++;
         }
-        return sb;
+        return new String(chars);
     }
+
+    private void reverseStr(char[] chars, int left, int right) {
+        while (left < right) {
+            chars[left] ^= chars[right];
+            chars[right] ^= chars[left];
+            chars[left] ^= chars[right];
+            left++;
+            right--;
+        }
+    }
+
+    public char[] eraseExtraSpaces(char[] chars) {
+        StringBuilder sb = new StringBuilder();
+        int i = 0;
+        while (chars[i] == ' ') i++;
+        int j = chars.length - 1;
+        while (chars[j] == ' ') j--;
+        for (; i <= j; i++) {
+            if (chars[i] != ' ' || chars[i - 1] != ' ') {
+                sb.append(chars[i]);
+            }
+        }
+        return sb.toString().toCharArray();
+    }
+
+//    public StringBuilder eraseExtraSpaces(String s) {
+//        int start = 0, end = s.length() - 1;
+//        while (s.charAt(start) == ' ') start++;
+//        while (s.charAt(end) == ' ') end--;
+//        StringBuilder sb = new StringBuilder();
+//        while (start <= end) {
+//            char c = s.charAt(start);
+//            if (c != ' ' || sb.charAt(sb.length() - 1) != ' ') {
+//                sb.append(c);
+//            }
+//            start++;
+//        }
+//        return sb;
+//    }
 }

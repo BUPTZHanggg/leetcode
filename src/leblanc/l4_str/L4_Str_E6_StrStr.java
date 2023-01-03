@@ -17,8 +17,8 @@ public class L4_Str_E6_StrStr {
 
     public static void main(String[] args) {
         L4_Str_E6_StrStr cl = new L4_Str_E6_StrStr();
-        String a = "hello";
-        String s = "llnu";
+        String a = "mississippi";
+        String s = "issip";
         int[] nextArr = new int[s.length()];
         cl.buildPreTable(nextArr, s.toCharArray());
         System.out.println(Arrays.toString(nextArr));

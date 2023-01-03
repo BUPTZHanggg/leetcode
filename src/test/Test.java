@@ -11,6 +11,12 @@ import sun.security.ec.CurveDB;
  */
 public class Test {
 
+    static {
+        System.out.println("Test类的初始化");
+    }
+
+    public static final String a = new String("111");
+
     public static void main(String[] args) {
         //获取系统类加载器
         ClassLoader systemClassLoader = ClassLoader.getSystemClassLoader();

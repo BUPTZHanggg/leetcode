@@ -16,7 +16,24 @@ public class L4_Str_E2_ReverseStr {
 
     public static void main(String[] args) {
         L4_Str_E2_ReverseStr cl = new L4_Str_E2_ReverseStr();
-        System.out.println(cl.reverseStr("abcdefg", 5));
+        System.out.println(cl.reverseStr0("abcdefg", 2));
+    }
+
+    public String reverseStr0(String s, int k) {
+        char[] chars = s.toCharArray();
+        int i = 0;
+        while (i < s.length()) {
+            int left = i, right = left + k <= s.length() ? left + k - 1 : s.length() - 1;
+            while (left < right) {
+                chars[left] ^= chars[right];
+                chars[right] ^= chars[left];
+                chars[left] ^= chars[right];
+                left++;
+                right--;
+            }
+            i += (2 * k);
+        }
+        return new String(chars);
     }
 
     public String reverseStr(String s, int k) {

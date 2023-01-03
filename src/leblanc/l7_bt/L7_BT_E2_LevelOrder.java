@@ -3,7 +3,9 @@ package leblanc.l7_bt;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 import common.TreeNode;
 
@@ -34,7 +36,7 @@ public class L7_BT_E2_LevelOrder {
             return new ArrayList<>();
         }
         List<List<Integer>> res = new ArrayList<>();
-        Deque<TreeNode> queue = new ArrayDeque<>();
+        Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
         while (!queue.isEmpty()) {
             List<Integer> curr = new ArrayList<>();

@@ -28,6 +28,6 @@ public class L1_Array_E4_MySqrt {
                 left = mid + 1;
             }
         }
-        return right;
+        return 0;
     }
 }

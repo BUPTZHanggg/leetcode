@@ -1,7 +1,10 @@
 package test;
 
+import java.net.InetAddress;
 import java.net.URL;
 import java.security.Provider;
+import java.util.Iterator;
+import java.util.ServiceLoader;
 
 import sun.security.ec.CurveDB;
 
@@ -18,6 +21,18 @@ public class Test {
     public static final String a = new String("111");
 
     public static void main(String[] args) {
+        String s2 = Long.toBinaryString(Long.MAX_VALUE);
+        System.out.println(s2.length());
+        long l = Long.parseLong("111111111111111111111111111111111111111111", 2);
+        String s = Long.toBinaryString(-1L);
+        System.out.println(s);
+        String s1 = Long.toBinaryString(~(-1L << 5));
+        System.out.println(s1);
+        ServiceLoader<Inter1> services = ServiceLoader.load(Inter1.class);
+        Iterator<Inter1> iterator = services.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next().getClass());
+        }
         //获取系统类加载器
         ClassLoader systemClassLoader = ClassLoader.getSystemClassLoader();
         System.out.println(systemClassLoader); //sun.misc.Launcher$AppClassLoader@18b4aac2

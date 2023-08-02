@@ -177,9 +177,9 @@ public class L7_BT_E1_Traversal {
                 st.push(curr);
                 curr = curr.left;
             } else {
-                curr = st.pop();
-                res.add(curr.val);
-                curr = curr.right;
+                TreeNode pop = st.pop();
+                res.add(pop.val);
+                curr = pop.right;
             }
         }
     }

@@ -1,5 +1,10 @@
 package leblanc.l2_linkedlist;
 
+import static java.lang.Math.abs;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import common.ListNode;
 
 /**
@@ -11,6 +16,10 @@ import common.ListNode;
  * Created on 2022-06-07
  */
 public class L2_LinkedList_E5_GetIntersectionNode {
+
+    public static void main(String[] args) {
+        System.out.println(abs("GBJHB1uKZkA".hashCode() % 1000));
+    }
 
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         ListNode head1 = headA, head2 = headB;

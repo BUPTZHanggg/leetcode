@@ -4,6 +4,7 @@ package leblanc.l1_array;
  * LC844
  * 给定 s 和 t 两个字符串，当它们分别被输入到空白的文本编辑器后，如果两者相等，返回 true 。
  * # 代表退格字符。
+ * s 和 t 只含有小写字母以及字符 '#'
  * @author zhaohang <zhaohang06@kuaishou.com>
  * Created on 2022-05-02
  */

@@ -2,8 +2,8 @@ package leblanc.l1_array;
 
 /**
  * LC704
- * 给定一个 n 个元素有序的（升序）整型数组 nums 和一个目标值 target
- * 写一个函数搜索 nums 中的 target，如果目标值存在返回下标，否则返回 -1。
+ * 给定一个n个元素有序的（升序）整型数组nums 和一个目标值target
+ * 写一个函数搜索nums中的 target，如果目标值存在返回下标，否则返回 -1。
  * @author zhaohang <zhaohang06@kuaishou.com>
  * Created on 2022-04-11
  */

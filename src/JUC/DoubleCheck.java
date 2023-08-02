@@ -26,6 +26,6 @@ public class DoubleCheck {
     }
 
     private static class DoubleCheckHolder {
-        private static DoubleCheck instance = new DoubleCheck();
+        private static final DoubleCheck instance = new DoubleCheck();
     }
 }

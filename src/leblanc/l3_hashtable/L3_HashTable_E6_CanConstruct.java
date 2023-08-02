@@ -6,6 +6,8 @@ package leblanc.l3_hashtable;
  * 如果可以，返回 true ；否则返回 false 。
  * magazine 中的每个字符只能在 ransomNote 中使用一次。
  *
+ * - ransomNote 和 magazine 由小写英文字母组成
+ *
  * @author zhaohang <zhaohang06@kuaishou.com>
  * Created on 2022-06-22
  */

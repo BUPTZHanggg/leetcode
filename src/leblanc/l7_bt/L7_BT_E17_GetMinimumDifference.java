@@ -18,7 +18,7 @@ public class L7_BT_E17_GetMinimumDifference {
     public int getMinimumDifference(TreeNode root) {
         if (root == null) return 0;
         Stack<TreeNode> stack = new Stack<>();
-        int res = Integer.MAX_VALUE;
+        Integer res = null;
         TreeNode pre = null;
         while (!stack.isEmpty() || root != null) {
             if (root != null) {
@@ -26,13 +26,13 @@ public class L7_BT_E17_GetMinimumDifference {
                 root = root.left;
             } else {
                 TreeNode pop = stack.pop();
-                if (pre != null && pop.val - pre.val < res) {
+                if (pre != null && (res == null || pop.val - pre.val < res)) {
                     res = pop.val - pre.val;
                 }
                 pre = pop;
                 root = pop.right;
             }
         }
-        return res == Integer.MAX_VALUE ? 0 : res;
+        return res == null ? 0 : res;
     }
 }
